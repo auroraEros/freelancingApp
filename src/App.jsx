@@ -10,7 +10,8 @@ import Auth from "./pages/Auth";
 import CompleteProfile from "./pages/CompleteProfile";
 import Home from "./pages/Home";
 import AppLayout from "./ui/AppLayout";
-import OwnerDashboard from "./features/owner/OwnerDashboard";
+import OwnerDashboard from "./pages/OwnerDashboard";
+import Projects from "./pages/Projects";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/owner" element={<AppLayout />}>
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<OwnerDashboard/>} />
+          <Route path="projects" element={<Projects/>}/>
         </Route>
       </Routes>
       <Toaster />

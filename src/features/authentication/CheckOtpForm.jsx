@@ -4,8 +4,8 @@ import { toast } from "react-hot-toast";
 import { CiEdit } from "react-icons/ci";
 import OTPInput from "react-otp-input";
 
-import { useCheckOtp } from "../../hooks/useCheckOtp";
 import { useOtpContext } from "./OtpContext";
+import {useCheckOtp}from "./useCheckOtp"
 import Loader from "../../ui/Loader";
 import SubmitButton from "../../ui/SubmitButton";
 

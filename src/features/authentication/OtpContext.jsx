@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { useGetOtp } from "../../hooks/useGetOtp";
+import { useGetOtp } from "./useGetOtp";
 import {toast} from "react-hot-toast"
 
 const OtpContext = new createContext();

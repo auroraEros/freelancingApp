@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 import SubmitButton from "../../ui/SubmitButton";
-import { useCompleteProfile } from "../../hooks/useCompleteProfile";
+import { useCompleteProfile } from "./useCompleteProfile";
 import RadioInputGroup from "../../ui/RadioInputGroup";
 import Loader from "../../ui/Loader";
 import RHFTextField from "../../ui/RHFTextField";
