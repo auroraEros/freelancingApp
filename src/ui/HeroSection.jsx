@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../hooks/useUser";
 
 function HeroSection() {
+  const navigate = useNavigate();
+  const { user } = useUser();
+
   return (
     <section className="w-full px-6 py-20 bg-primary-100">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
@@ -20,10 +25,15 @@ function HeroSection() {
             حرفه‌ای.
           </p>
           <div className="flex justify-center md:justify-start gap-4">
-            <Button className="px-6 py-2 text-lg rounded-xl">ثبت پروژه</Button>
-            <Button variant="outline" className="px-6 py-2 text-lg rounded-xl">
-              مشاهده پروژه‌ها
+            <Button
+              className="px-6 py-2 text-lg rounded-xl"
+              onClick={() => navigate(user?.role?.toLowerCase() ?? "auth")}
+            >
+              ثبت پروژه
             </Button>
+            {/* <Button variant="outline" className="px-6 py-2 text-lg rounded-xl">
+              مشاهده پروژه‌ها
+            </Button> */}
           </div>
         </div>
 

@@ -16,3 +16,7 @@ export function completeProfile(data) {
     .post("/user/complete-profile", data)
     .then(({ data }) => data.data);
 }
+
+export function logoutApi() {
+  return http.post("/user/logout").then(({ data }) => data.data);
+}

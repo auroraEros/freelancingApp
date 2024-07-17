@@ -1,11 +1,11 @@
-import ProjectTable from "../features/projects/ProjectTable"
+import DashboardLayout from "../features/owner/DashboardLayout";
 
 function OwnerDashboard() {
   return (
-    <div className="bg-red-300 ">
-      <ProjectTable/>
+    <div>
+      <DashboardLayout />
     </div>
-  )
+  );
 }
 
-export default OwnerDashboard
+export default OwnerDashboard;
