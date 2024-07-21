@@ -6,8 +6,8 @@ function NavLinkListItem({ children, link }) {
       <NavLink
         to={link}
         className={({ isActive }) =>
-          `flex items-center gap-x-2 px-2 py-1.5 text-secondary-600 rounded-lg transition-all duration-300
-    hover:bg-primary-100/50 hover:text-secondary-800
+          `flex items-center gap-x-2 px-2 py-1.5  rounded-lg transition-all duration-300
+    hover:bg-primary-100/50 hover:text-primary-900
     ${isActive ? "bg-primary-100/50 text-primary-900" : ""}`
         }
       >

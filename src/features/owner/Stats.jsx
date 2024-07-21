@@ -3,7 +3,7 @@ import {
   HiCurrencyDollar,
   HiCollection,
 } from "react-icons/hi";
-import Stat from "./Stat";
+import Stat from "../../ui/Stat";
 function Stats({ projects }) {
   console.log(projects);
   const numOfProjects = projects.length;

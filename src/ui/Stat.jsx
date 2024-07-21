@@ -1,4 +1,5 @@
-import {toPersianNumbers} from "../../utils/toPersianNumbers"
+import { toPersianNumbers } from "../utils/toPersianNumbers";
+
 const colors = {
   primary: "bg-primary-100 text-primary-700",
   green: "bg-green-100 text-green-700",
@@ -6,8 +7,6 @@ const colors = {
 };
 
 function Stat({ icon, value, title, color }) {
-
-
   return (
     <div className="col-span-1 grid grid-rows-2 grid-cols-[6.4rem_1fr] bg-secondary-0 p-4 rounded-lg gap-x-4">
       <div

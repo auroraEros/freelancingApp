@@ -1,11 +1,11 @@
-function DashboardHeader() {
+function DashboardHeader({text="خود"}) {
   return (
     <div className="space-y-2 mb-8">
       <h1 className="font-bold text-2xl text-secondary-900">
         وضعیت و آمار فعلی
       </h1>
       <p className="text-secondary-700">
-        خلاصه‌ای از آمار فعالیت‌های خود را مشاهده کنید:
+        خلاصه‌ای از آمار فعالیت‌های {text} را مشاهده کنید:
       </p>
     </div>
   );

@@ -4,7 +4,7 @@ import AppLayout from "../../ui/AppLayout";
 import NavLinkListItem from "../../ui/NavLinkListItem";
 import Sidebar from "../../ui/Sidebar";
 
-function OwnerLayout() {
+function FreelancerLayout() {
   return (
     <AppLayout>
       <Sidebar>
@@ -17,9 +17,14 @@ function OwnerLayout() {
           <HiCollection className="w-4 h-4" />
           <span>پروژه‌ها</span>
         </NavLinkListItem>
+
+        <NavLinkListItem link="proposals">
+          <HiDocumentText className="w-4 h-4" />
+          <span>درخواست‌ها</span>
+        </NavLinkListItem>
       </Sidebar>
     </AppLayout>
   );
 }
 
-export default OwnerLayout;
+export default FreelancerLayout;

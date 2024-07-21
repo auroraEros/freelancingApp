@@ -1,6 +1,6 @@
 import { TagsInput } from "react-tag-input-component";
 import RHFSelect from "../../ui/RHFSelect";
-import TextField from "../../ui/TextField";
+import RHFTextField from "../../ui/RHFTextField";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import DatePickerField from "../../ui/DatePickerField";
@@ -73,7 +73,7 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
 
   return (
     <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
-      <TextField
+      <RHFTextField
         label="عنوان"
         name="title"
         register={register}
@@ -87,7 +87,7 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
         }}
         errors={errors}
       />
-      <TextField
+      <RHFTextField
         label="توضیحات"
         name="description"
         register={register}
@@ -101,7 +101,7 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
         }}
         errors={errors}
       />
-      <TextField
+      <RHFTextField
         label="بودجه"
         name="budget"
         type="number"

@@ -15,7 +15,14 @@ import Project from "./pages/Project";
 import EditUserProfile from "./pages/EditUserProfile";
 import ThemeProvider from "./context/ThemeContext";
 import OwnerLayout from "./features/owner/OwnerLayout";
-import Proposals from "./ui/Proposals";
+import FreelancerLayout from "./features/freelancer/FreelancerLayout";
+import FreelancerDashboard from "./pages/FreelancerDashboard";
+import SubmittedProjects from "./pages/SubmittedProjects";
+import Proposals from "./pages/Proposals";
+import NotFound from "./pages/NotFound";
+
+import ProtectedRoute from "./ui/ProtectedRoute";
+import NoAccess from "./pages/NoAccess";
 
 const queryClient = new QueryClient();
 
@@ -27,15 +34,39 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/complete-profile" element={<CompleteProfile />} />
-          <Route path="/owner" element={<OwnerLayout />}>
+
+          <Route
+            path="/owner"
+            element={
+              <ProtectedRoute>
+                <OwnerLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<OwnerDashboard />} />
             <Route path="edit-profile" element={<EditUserProfile />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<Project />} />
+          </Route>
+
+          <Route
+            path="/freelancer"
+            element={
+              <ProtectedRoute>
+                <FreelancerLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Navigate to="dashboard" replace />} />
+            <Route path="dashboard" element={<FreelancerDashboard />} />
+            <Route path="projects" element={<SubmittedProjects />} />
             <Route path="proposals" element={<Proposals />} />
           </Route>
+          <Route path="/no-access" element={<NoAccess />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
+
         <Toaster />
       </QueryClientProvider>
     </ThemeProvider>
