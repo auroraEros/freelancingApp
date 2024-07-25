@@ -9,9 +9,9 @@ import {
 } from "react-icons/hi";
 function FeatureKeys() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-secondary-0">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-10 text-gray-900">
+        <h2 className="text-3xl font-bold mb-10 text-secondary-900">
           چه کارهایی می‌تونی انجام بدی؟
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

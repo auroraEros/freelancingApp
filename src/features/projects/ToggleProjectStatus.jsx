@@ -1,5 +1,4 @@
-import { Switch } from "@headlessui/react";
-import { useState } from "react";
+
 import useToggleProjectStatus from "./useToggleprojectStatus";
 import Loader from "../../ui/Loader";
 import Toggle from "../../ui/Toggle";

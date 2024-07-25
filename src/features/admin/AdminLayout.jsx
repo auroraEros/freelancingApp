@@ -1,11 +1,10 @@
-import { HiCollection, HiDocumentText, HiHome } from "react-icons/hi";
-
+import { HiCollection, HiDocumentText, HiHome, HiUser } from "react-icons/hi";
 import AppLayout from "../../ui/AppLayout";
 import NavLinkListItem from "../../ui/NavLinkListItem";
 import Sidebar from "../../ui/Sidebar";
 import Logo from "../../ui/Logo";
 
-function OwnerLayout() {
+function AdminLayout() {
   return (
     <AppLayout>
       <Sidebar>
@@ -16,14 +15,22 @@ function OwnerLayout() {
           <span>داشبورد</span>
         </NavLinkListItem>
 
+        <NavLinkListItem link="users">
+          <HiUser className="w-4 h-4" />
+          <span>کاربران</span>
+        </NavLinkListItem>
         <NavLinkListItem link="projects">
           <HiCollection className="w-4 h-4" />
           <span>پروژه‌ها</span>
         </NavLinkListItem>
-        
+
+        <NavLinkListItem link="proposals">
+          <HiDocumentText className="w-4 h-4" />
+          <span>درخواست‌ها</span>
+        </NavLinkListItem>
       </Sidebar>
     </AppLayout>
   );
 }
 
-export default OwnerLayout;
+export default AdminLayout;

@@ -23,6 +23,9 @@ import NotFound from "./pages/NotFound";
 
 import ProtectedRoute from "./ui/ProtectedRoute";
 import NoAccess from "./pages/NoAccess";
+import AdminLayout from "./features/admin/AdminLayout";
+import AdminDashboard from "./pages/AdminDashboard";
+import Users from "./pages/Users";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +37,20 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/complete-profile" element={<CompleteProfile />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Navigate to="dashboard" replace />} />
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="users" element={<Users />} />
+            <Route path="projects" element={<SubmittedProjects />} />
+            <Route path="proposals" element={<Proposals />} />
+          </Route>
 
           <Route
             path="/owner"

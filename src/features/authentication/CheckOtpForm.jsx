@@ -5,10 +5,9 @@ import { CiEdit } from "react-icons/ci";
 import OTPInput from "react-otp-input";
 
 import { useOtpContext } from "./OtpContext";
-import {useCheckOtp}from "./useCheckOtp"
+import { useCheckOtp } from "./useCheckOtp";
 import Loader from "../../ui/Loader";
 import SubmitButton from "../../ui/SubmitButton";
-
 
 function CheckOtpForm() {
   const [otp, setOtp] = useState("");
@@ -41,6 +40,7 @@ function CheckOtpForm() {
       }
       if (user.role === "OWNER") return navigate("/owner");
       if (user.role === "FREELANCER") return navigate("/freelancer");
+      if (user.role === "ADMIN") return navigate("/admin");
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }

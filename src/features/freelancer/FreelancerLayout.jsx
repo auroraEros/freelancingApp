@@ -3,11 +3,14 @@ import { HiCollection, HiDocumentText, HiHome } from "react-icons/hi";
 import AppLayout from "../../ui/AppLayout";
 import NavLinkListItem from "../../ui/NavLinkListItem";
 import Sidebar from "../../ui/Sidebar";
+import Logo from "../../ui/Logo";
 
 function FreelancerLayout() {
   return (
     <AppLayout>
       <Sidebar>
+        <Logo />
+
         <NavLinkListItem link="dashboard">
           <HiHome className="w-4 h-4" />
           <span>داشبورد</span>
@@ -22,6 +25,7 @@ function FreelancerLayout() {
           <HiDocumentText className="w-4 h-4" />
           <span>درخواست‌ها</span>
         </NavLinkListItem>
+      
       </Sidebar>
     </AppLayout>
   );

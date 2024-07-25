@@ -1,23 +1,23 @@
-function RHFTextField({
+function RHFTextarea({
   label,
-  type = "text",
   name,
   validationSchema = {},
   register,
   errors,
-  required,
-  className="textField__input"
+
+  rows = 4,
+  className = "textField__input",
 }) {
   return (
     <div>
       <label className="mb-2 block text-secondary-700" htmlFor={name}>
-        {label} {required && <span className="text-error">*</span>}
+        {label}
       </label>
-      <input
+      <textarea
         className={className}
         name={name}
         id={name}
-        type={type}
+        rows={rows}
         {...register(name, validationSchema)}
       />
       {errors && errors[name] && (
@@ -29,4 +29,4 @@ function RHFTextField({
   );
 }
 
-export default RHFTextField;
+export default RHFTextarea;

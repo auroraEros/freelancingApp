@@ -10,7 +10,8 @@ function Header() {
         className={`container xl:max-w-screen-lg flex items-center justify-between gap-x-8
         ${isLoading ? "blur-sm opacity-50" : ""}`}
       >
-        <Greeting/>
+      
+        <Greeting />
         <HeaderMenu />
       </div>
     </header>

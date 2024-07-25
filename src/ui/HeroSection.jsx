@@ -3,14 +3,16 @@ import { motion } from "framer-motion";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../hooks/useUser";
+import ThemeToggle from "./ThemeToggle";
 
 function HeroSection() {
   const navigate = useNavigate();
   const { user } = useUser();
 
   return (
-    <section className="w-full px-6 py-20 bg-primary-100">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+    <section className="w-full px-6 py-20 bg-primary-100 dark:bg-secondary-200 relative">
+      <ThemeToggle className="absolute left-2 top-2"/>
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row bg-transparent items-center gap-12">
         <div className="flex-1 text-center md:text-right space-y-6">
           <motion.h1
             className="text-4xl md:text-5xl text-secondary-900 font-bold leading-relaxed drop-shadow-sm"
@@ -20,20 +22,18 @@ function HeroSection() {
           >
             اتصال سریع فریلنسرها و کارفرماها
           </motion.h1>
-          <p className="text-secondary-600  text-lg">
+          <p className="text-secondary-700  text-lg">
             پروژه‌ات رو ثبت کن یا بین پروژه‌ها بگرد و درخواست بده. ساده، سریع و
             حرفه‌ای.
           </p>
           <div className="flex justify-center md:justify-start gap-4">
             <Button
-              className="px-6 py-2 text-lg rounded-xl"
+              className="px-6 py-2 text-lg rounded-xl text-white"
               onClick={() => navigate(user?.role?.toLowerCase() ?? "auth")}
             >
               ثبت پروژه
             </Button>
-            {/* <Button variant="outline" className="px-6 py-2 text-lg rounded-xl">
-              مشاهده پروژه‌ها
-            </Button> */}
+           
           </div>
         </div>
 

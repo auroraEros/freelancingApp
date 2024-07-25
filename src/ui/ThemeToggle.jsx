@@ -1,11 +1,11 @@
 import {  HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
 import { useTheme } from "../context/ThemeContext";
-function ThemeToggle() {
+function ThemeToggle({className=""}) {
   const { isDarkMode, toggleDarkMode } = useTheme();
   return (
     <button
       onClick={toggleDarkMode}
-      className="text-primary-900 hover:text-primary-700 transition-colors duration-300"
+      className={`text-primary-900 hover:text-primary-700 transition-colors duration-300 ${className}`}
     >
       {isDarkMode ? (
         <HiOutlineSun className="w-5 h-5" />

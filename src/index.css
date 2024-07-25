@@ -77,6 +77,18 @@
   .textField__input {
     @apply w-full py-3 px-4 rounded-xl text-secondary-900 border border-secondary-100 bg-secondary-100 hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 transition-all duration-300 ease-out focus:shadow-lg focus:shadow-primary-200 dark:focus:shadow-secondary-200;
   }
+
+
+.field__input {
+  @apply w-full py-3 px-4 rounded-xl text-secondary-900 
+  border border-secondary-300 bg-secondary-0
+  hover:border-primary-500 
+  focus:border-primary-500 focus:bg-secondary-0
+  transition-all duration-300 ease-out 
+  focus:shadow-md focus:shadow-primary-100;
+}
+
+
   .btn {
     @apply px-3 py-1 font-bold rounded-xl transition-all duration-300;
   }
