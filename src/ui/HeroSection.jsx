@@ -11,7 +11,7 @@ function HeroSection() {
 
   return (
     <section className="w-full px-6 py-20 bg-primary-100 dark:bg-secondary-200 relative">
-      <ThemeToggle className="absolute left-2 top-2"/>
+      <ThemeToggle className="absolute left-2 top-2" />
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row bg-transparent items-center gap-12">
         <div className="flex-1 text-center md:text-right space-y-6">
           <motion.h1
@@ -20,7 +20,10 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            اتصال سریع فریلنسرها و کارفرماها
+            اتصال سریع فریلنسرها و کارفرماها در{" "}
+            <span className="text-primary-900 dark:text-primary-400">
+              ورکستان
+            </span>
           </motion.h1>
           <p className="text-secondary-700  text-lg">
             پروژه‌ات رو ثبت کن یا بین پروژه‌ها بگرد و درخواست بده. ساده، سریع و
@@ -33,7 +36,6 @@ function HeroSection() {
             >
               ثبت پروژه
             </Button>
-           
           </div>
         </div>
 

@@ -24,6 +24,7 @@ function ProjectRow({ project, index }) {
   const [open, setIsOpen] = useState(false);
   const { status } = project;
 
+
   return (
     <Table.Row>
       <td>{index + 1}</td>
