@@ -2,11 +2,14 @@ import TextField from "../../ui/TextField";
 import SubmitButton from "../../ui/SubmitButton";
 import Loader from "../../ui/Loader";
 import { useOtpContext } from "./OtpContext";
+import FadingMessage from "../../ui/FadingMessage";
+import { useEffect, useState } from "react";
 
 function SendOTPForm() {
   const { phoneNumber, setPhonNumber, sendOtp, isGettingOtp } = useOtpContext();
+
   return (
-    <div className="pt-20">
+    <div className="pt-20 relative">
       <form className="space-y-10" onSubmit={sendOtp}>
         <TextField
           label="شماره موبایل خود را وارد کنید:"
@@ -18,6 +21,10 @@ function SendOTPForm() {
           {isGettingOtp ? <Loader /> : <SubmitButton>تایید</SubmitButton>}
         </div>
       </form>
+
+      <div className="mt-6 flex justify-center">
+        <FadingMessage />
+      </div>
     </div>
   );
 }

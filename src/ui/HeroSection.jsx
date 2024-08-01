@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../hooks/useUser";
 import ThemeToggle from "./ThemeToggle";
+import { useAuthorize } from "../hooks/useAuthorize";
 
 function HeroSection() {
   const navigate = useNavigate();
-  const { user } = useUser();
+  const { user, isVerified } = useAuthorize();
+  const navigateUrl = isVerified ? user?.role?.toLowerCase() : "auth";
 
   return (
     <section className="w-full px-6 py-20 bg-primary-100 dark:bg-secondary-200 relative">
@@ -32,7 +33,7 @@ function HeroSection() {
           <div className="flex justify-center md:justify-start gap-4">
             <Button
               className="px-6 py-2 text-lg rounded-xl text-white"
-              onClick={() => navigate(user?.role?.toLowerCase() ?? "auth")}
+              onClick={() => navigate(navigateUrl)}
             >
               ثبت پروژه
             </Button>

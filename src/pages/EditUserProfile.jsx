@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import useUpdateProfile from "../features/authentication/useUpdateProfile";
 import { useUser } from "../hooks/useUser";
 import RHFTextField from "../ui/RHFTextField";
-import RHFTextarea from "../ui/RHFTextarea";
 import SubmitButton from "../ui/SubmitButton";
 import Loader from "../ui/Loader";
 
@@ -20,7 +19,6 @@ function EditUserProfile() {
     defaultValues: {
       name: "",
       email: "",
-      description: "",
     },
   });
 
@@ -29,7 +27,6 @@ function EditUserProfile() {
       reset({
         name: user.name || "",
         email: user.email || "",
-        description: user.description || "",
       });
     }
   }, [user, reset]);
@@ -67,21 +64,6 @@ function EditUserProfile() {
               },
             }}
             errors={errors}
-            className="field__input"
-          />
-
-          <RHFTextarea
-            label="درباره من"
-            name="description"
-            required
-            register={register}
-            errors={errors}
-            validationSchema={{
-              minLength: {
-                value: 10,
-                message: "حداقل ۱۰ کاراکتر وارد کنید",
-              },
-            }}
             className="field__input"
           />
 

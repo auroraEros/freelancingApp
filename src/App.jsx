@@ -26,6 +26,7 @@ import NoAccess from "./pages/NoAccess";
 import AdminLayout from "./features/admin/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
 import Users from "./pages/Users";
+import Categories from "./pages/Categories";
 
 const queryClient = new QueryClient();
 
@@ -47,9 +48,11 @@ function App() {
           >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="edit-profile" element={<EditUserProfile />} />
             <Route path="users" element={<Users />} />
             <Route path="projects" element={<SubmittedProjects />} />
             <Route path="proposals" element={<Proposals />} />
+            <Route path="categories" element={<Categories />} />
           </Route>
 
           <Route
@@ -77,6 +80,7 @@ function App() {
           >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<FreelancerDashboard />} />
+            <Route path="edit-profile" element={<EditUserProfile />} />
             <Route path="projects" element={<SubmittedProjects />} />
             <Route path="proposals" element={<Proposals />} />
           </Route>

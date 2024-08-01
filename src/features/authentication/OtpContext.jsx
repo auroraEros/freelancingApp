@@ -1,19 +1,21 @@
 import { createContext, useContext, useState } from "react";
 import { useGetOtp } from "./useGetOtp";
-import {toast} from "react-hot-toast"
+import { toast } from "react-hot-toast";
 
 const OtpContext = new createContext();
 
 export default function OtpProvider({ children }) {
   const [phoneNumber, setPhonNumber] = useState("");
   const [step, setStep] = useState(1);
-  const { gettingOtp,isGettingOtp } = useGetOtp();
+  const { gettingOtp, isGettingOtp } = useGetOtp();
   async function sendOtp(e) {
     e.preventDefault();
     try {
       const { message } = await gettingOtp({ phoneNumber });
       setStep(2);
-      toast.success(message);
+      toast.success(message, {
+        duration: 5000,
+      });
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -21,7 +23,14 @@ export default function OtpProvider({ children }) {
 
   return (
     <OtpContext.Provider
-      value={{ step, setStep, phoneNumber, setPhonNumber, sendOtp ,isGettingOtp}}
+      value={{
+        step,
+        setStep,
+        phoneNumber,
+        setPhonNumber,
+        sendOtp,
+        isGettingOtp,
+      }}
     >
       {children}
     </OtpContext.Provider>

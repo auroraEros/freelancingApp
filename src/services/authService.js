@@ -35,6 +35,7 @@ export function changeUserStatusApi({ userId, data }) {
 
 
 export function updateProfileApi(data) {
+    console.log("API payload:", data);
   return http
     .patch("/user/update", data)
     .then(({ data }) => data.data);

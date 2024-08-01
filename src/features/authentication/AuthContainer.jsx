@@ -14,7 +14,7 @@ function AuthContainer() {
     if (user) return navigate("/", { replace: true });
   }, [navigate,user]);
   return (
-    <div className="container sm:max-w-screen-sm">
+    <div className="container sm:max-w-screen-sm ">
       {step === 1 ? <SendOTPForm /> : <CheckOtpForm />}
     </div>
   );

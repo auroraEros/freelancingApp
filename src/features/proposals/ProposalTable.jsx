@@ -1,5 +1,6 @@
 import Loader from "../../ui/Loader";
 import Table from "../../ui/Table";
+import Empty from "../../ui/Empty";
 import ProposalRow from "./ProposalRow";
 import useProposals from "./useProposals";
 

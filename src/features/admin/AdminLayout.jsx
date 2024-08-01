@@ -1,4 +1,4 @@
-import { HiCollection, HiDocumentText, HiHome, HiUser } from "react-icons/hi";
+import { HiCollection, HiDocumentText, HiHome, HiTag, HiUser } from "react-icons/hi";
 import AppLayout from "../../ui/AppLayout";
 import NavLinkListItem from "../../ui/NavLinkListItem";
 import Sidebar from "../../ui/Sidebar";
@@ -27,6 +27,11 @@ function AdminLayout() {
         <NavLinkListItem link="proposals">
           <HiDocumentText className="w-4 h-4" />
           <span>درخواست‌ها</span>
+        </NavLinkListItem>
+
+         <NavLinkListItem link="categories">
+          <HiTag className="w-4 h-4" />
+          <span>دسته‌بندی‌ها</span>
         </NavLinkListItem>
       </Sidebar>
     </AppLayout>

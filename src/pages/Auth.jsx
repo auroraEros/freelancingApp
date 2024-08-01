@@ -4,7 +4,9 @@ import OtpProvider from "../features/authentication/OtpContext";
 function Auth() {
   return (
     <OtpProvider>
-      <AuthContainer />
+      <div className="bg-secondary-0 h-screen">
+        <AuthContainer />
+      </div>
     </OtpProvider>
   );
 }
